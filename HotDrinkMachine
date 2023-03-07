@@ -1,0 +1,29 @@
+package org.example.cw.HW;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class HotDrinkMachine {
+    private List<HotDrink> products = new ArrayList<>();
+    public void initHotDrink(List<HotDrink> products){
+        this.products = products;
+    }
+    public HotDrink getHotDrink(String name){
+        for (HotDrink p:products){
+            if (p.getName().equals(name)) {
+                return p;
+            }
+        }
+        return new HotDrink("Продукт не найден", 0, 0);
+    }
+
+    public String getHotDrink1(int maxTemp){
+        List<HotDrink> hotDrinkArrayList = new ArrayList<>();
+        for (HotDrink p : products) {
+            if (p.getTemperature() <= maxTemp){
+                hotDrinkArrayList.add(p);
+            }
+        }
+        return hotDrinkArrayList.toString();
+    }
+}
