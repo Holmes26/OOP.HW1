@@ -1,0 +1,19 @@
+package org.example.cw.HW;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) {
+        HotDrinkMachine hotDrinkMachine = new HotDrinkMachine();
+        List<HotDrink> products = new ArrayList<>(Arrays.asList(new HotDrink("amiricano",200, 80),
+                new HotDrink("latte", 400, 75),
+                new HotDrink("capuchino", 300, 77),
+                new HotDrink("tea", 300, 85),
+                new HotDrink("tea green", 300, 85) ));
+        hotDrinkMachine.initHotDrink(products);
+        System.out.println(hotDrinkMachine.getHotDrink("latte").toString());
+        System.out.println(hotDrinkMachine.getHotDrink1(80).toString());
+    }
+}
